@@ -1,0 +1,5 @@
+name:  Gangnam
+description:  A sample application
+
+dependencies:
+   box2d: 0.0.3
