@@ -13,3 +13,11 @@ All rights to the Gangnam Sytle idea, song, theme, everything is not owned by me
 =======
 Google DevFest West 2012 Game Made with Dart
 >>>>>>> e2e10ae3cbff6dad57b7c4633879aaf5b65fa21a
+
+
+v0.001 O
+riginal from Devfest West Hackathon
+
+v0.002 
+Turned off scrolling of the browser and added Gangnam Style Instrumental music. 
+Put it on devfestwestdemo.appspot.com.
