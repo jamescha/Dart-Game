@@ -69,7 +69,7 @@ abstract class Demo {
   // every frame to minimize overhead.
   Stopwatch _stopwatch;
 
-  var img = new ImageElement('land.gif', 2000, 300);
+  var img = new ImageElement('static/land.gif', 2000, 300);
 
   Demo(String name, [Vector gravity, this.viewportScale = _VIEWPORT_SCALE])
       : bodies = new List<Body>() {
@@ -120,7 +120,7 @@ abstract class Demo {
     viewport = new CanvasViewportTransform(extents, extents);
     viewport.scale = viewportScale;
     // Create our canvas drawing tool to give to the world.
-    viewport.setCamera(0,25, viewportScale);
+    //viewport.setCamera(0,25, viewportScale);
     debugDraw = new CanvasDraw(viewport, ctx);
 
     // Have the world draw itself for debugging purposes.

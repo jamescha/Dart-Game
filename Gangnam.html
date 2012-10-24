@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gangnam</title>
+    <link rel="stylesheet" href="static/Gangnam.css">
+     <style type="text/css">
+      body {
+        font-family: "Courier New", monospace;
+      }
+      
+      #fps {
+        color: #f00;
+        left: 800px;
+        top: 35px;
+        position: absolute;
+        display: none;
+      }
+      
+      #world-step {
+        color: #f00;
+        left: 660px;
+        top: 50px;
+        position: absolute;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <audio autoplay="true" loop="loop">
+        <source src="static/gangnam.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+    <div id="stats">
+	    <h1 id="title"> </h1>
+	    <div id="fps">FPS: <span id="fps-counter"></span></div>
+	    <div id="world-step">
+	      world.step time: <span id="world-step-time"></span>
+	    </div>
+	    <p>Google DevFest West Hackathon Project</p>
+    
+    </div>
+    
+    
+    <ul id="rules">
+      <li class="green">Push all balls into the sky and you win!</li>
+      <li class="red">Warning: Don't fly too high, you have only 5 lives!</li>
+    </ul>
+
+    <script type="application/dart" src="web/Gangnam.dart"></script>
+    <script src="https://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
+  </body>
+</html>

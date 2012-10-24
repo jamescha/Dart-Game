@@ -31469,7 +31469,7 @@ $.neg = function(a) {
 };
 
 $.Gangnam$ = function() {
-  var t1 = $.ImageElement_ImageElement('land.gif', 2000, 300);
+  var t1 = $.ImageElement_ImageElement('static/land.gif', 2000, 300);
   t1 = new $.Gangnam($.ListImplementation_List(null), null, null, null, null, null, null, null, null, 10, null, t1);
   t1.Demo$3('Gangnam Style', null, 10);
   return t1;
@@ -31841,10 +31841,6 @@ $.main = function() {
   $.ListImplementation_List(null);
   $.Random_Random(null);
   $.displayLives();
-  $.mul($.fallingBox.get$worldCenter().get$x(), 10);
-  $.mul($.fallingBox.get$worldCenter().get$y(), 10);
-  $.worlds.clearForces$0();
-  $.worlds.drawDebugData$0();
   t1.force_1 = null;
   $.add$1($.document().get$on().get$keyDown(), new $.main_anon(t1));
 };
