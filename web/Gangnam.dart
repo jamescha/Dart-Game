@@ -269,15 +269,15 @@ class Gangnam extends Demo {
     world.createJoint(cvjd);
     
     
-    
     BodyDef bd2 = new BodyDef();
     bd2.type = BodyType.DYNAMIC;
     PolygonShape psd = new PolygonShape();
-    psd.setAsBoxWithCenterAndAngle(3.0,1.5,new Vector(cx,cy+15.0),0.95);
+    psd.setAsBoxWithCenterAndAngle(3.0,5,new Vector(cx,cy+15.0),0.0);
     bd2.position = new Vector(cx,cy+15.0);
     fallingBox = world.createBody(bd2);
     bodies.add(fallingBox);
     fallingBox.createFixtureFromShape(psd, 3);
+
     
     // Create a bouncing balls.
     final bouncingCircle = new CircleShape();
@@ -340,8 +340,6 @@ void main() {
 
   displayLives();
 
-  ctx.drawImage(oppa,0,600);
-
   var force;
 
   document.on.keyDown.add((KeyboardEvent event){
@@ -351,7 +349,7 @@ void main() {
      
      debug();
      
-     force = new Vector (-150,0);
+     force = new Vector (-350,0);
      if (fallingBox.linearVelocity.x > -100) {
        fallingBox.applyLinearImpulse(force, fallingBox.worldCenter);
      }
@@ -370,7 +368,7 @@ void main() {
      }
      debug();
      
-     force=new Vector (0,700);
+     force=new Vector (0,2000);
      if(fallingBox.position.y < -4.0) { 
        fallingBox.applyLinearImpulse(force, fallingBox.worldCenter);
      }
@@ -385,7 +383,7 @@ void main() {
      
      debug();
      
-     force=new Vector (150,0);
+     force=new Vector (350,0);
      if(fallingBox.linearVelocity.x<100) {
        fallingBox.applyLinearImpulse(force, fallingBox.worldCenter);
      }
@@ -420,7 +418,7 @@ void picture(){
   //ctx.save();
   //ctx.translate(fallingBox.worldCenter.x+700, fallingBox.worldCenter.y+100);
   //ctx.rotate(fallingBox.angle);
-  ctx.drawImage(oppa, (fallingBox.worldCenter.x+95)*10, (fallingBox.worldCenter.y+445),100,150);
+  ctx.drawImage(oppa, (fallingBox.worldCenter.x+97)*10, (fallingBox.worldCenter.y+495),60,100);
   //ctx.restore();
 }
 

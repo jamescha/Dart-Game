@@ -1226,7 +1226,7 @@ $$.Gangnam = {"":
   var bd2 = $.BodyDef$();
   bd2.type = 2;
   var psd = $.PolygonShape$();
-  psd.setAsBoxWithCenterAndAngle$4(3, 1.5, $.Vector$(0, 25), 0.95);
+  psd.setAsBoxWithCenterAndAngle$4(3, 5, $.Vector$(0, 25), 0);
   bd2.position = $.Vector$(0, 25);
   $.fallingBox = $.world.createBody$1(bd2);
   this.bodies.push($.fallingBox);
@@ -32893,7 +32893,7 @@ $$.main_anon = {"":
   switch (event$.get$keyIdentifier()) {
     case 'Left':
       $.debug();
-      var force = $.Vector$(-150, 0);
+      var force = $.Vector$(-350, 0);
       var t1 = this.box_0;
       t1.force_2 = force;
       if ($.gtB($.fallingBox.get$linearVelocity().get$x(), -100)) {
@@ -32912,7 +32912,7 @@ $$.main_anon = {"":
         $.jumpcount = 0;
       }
       $.debug();
-      force = $.Vector$(0, 700);
+      force = $.Vector$(0, 2000);
       t1 = this.box_0;
       t1.force_2 = force;
       if ($.ltB($.fallingBox.get$position().get$y(), -4)) {
@@ -32926,7 +32926,7 @@ $$.main_anon = {"":
       break;
     case 'Right':
       $.debug();
-      force = $.Vector$(150, 0);
+      force = $.Vector$(350, 0);
       t1 = this.box_0;
       t1.force_2 = force;
       if ($.ltB($.fallingBox.get$linearVelocity().get$x(), 100)) {
@@ -34650,6 +34650,13 @@ $.TimeOfImpactConstraint$ = function() {
   return t1;
 };
 
+$.addLast = function(receiver, value) {
+  if (!$.isJsArray(receiver))
+    return receiver.addLast$1(value);
+  $.checkGrowable(receiver, 'addLast');
+  receiver.push(value);
+};
+
 $.ConstantVolumeJoint$ = function(_world, def) {
   var t1 = def.get$type();
   var t2 = def.get$bodyA();
@@ -34677,13 +34684,6 @@ $.add$slow = function(a, b) {
   return a.operator$add$1(b);
 };
 
-$.addLast = function(receiver, value) {
-  if (!$.isJsArray(receiver))
-    return receiver.addLast$1(value);
-  $.checkGrowable(receiver, 'addLast');
-  receiver.push(value);
-};
-
 $._Manager$ = function() {
   var t1 = new $._Manager(0, 0, 1, null, null, null, null, null, null, null, null, null);
   t1._Manager$0();
@@ -34703,7 +34703,6 @@ $.main = function() {
   $.ListImplementation_List(null);
   $.Random_Random(null);
   $.displayLives();
-  $.ctx.drawImage$3($.get$oppa(), 0, 600);
   t1.force_2 = null;
   $.add$1($.document().get$on().get$keyDown(), new $.main_anon(t1));
 };
@@ -34970,7 +34969,7 @@ $.WorldQueryWrapper$ = function() {
 };
 
 $.picture = function() {
-  $.ctx.drawImage$5($.get$oppa(), $.mul($.add($.fallingBox.get$worldCenter().get$x(), 95), 10), $.add($.fallingBox.get$worldCenter().get$y(), 445), 100, 150);
+  $.ctx.drawImage$5($.get$oppa(), $.mul($.add($.fallingBox.get$worldCenter().get$x(), 97), 10), $.add($.fallingBox.get$worldCenter().get$y(), 495), 60, 100);
 };
 
 $.Color3$ = function() {
@@ -35055,6 +35054,13 @@ $.AudioContext_AudioContext = function() {
 
 $._Elements_createDivElement = function() {
   return $._document().$dom_createElement$1('div');
+};
+
+$.sort = function(receiver, compare) {
+  if (!$.isJsArray(receiver))
+    return receiver.sort$1(compare);
+  $.checkMutable(receiver, 'sort');
+  $.DualPivotQuicksort_sort(receiver, compare);
 };
 
 $._MediaStreamTrackListEventsImpl$ = function(_ptr) {
@@ -35150,21 +35156,14 @@ $.addAll = function(receiver, collection) {
     $.add$1(receiver, iterator.next$0());
 };
 
-$.sort = function(receiver, compare) {
-  if (!$.isJsArray(receiver))
-    return receiver.sort$1(compare);
-  $.checkMutable(receiver, 'sort');
-  $.DualPivotQuicksort_sort(receiver, compare);
+$.DualPivotQuicksort_sort = function(a, compare) {
+  $.DualPivotQuicksort__doSort(a, 0, $.sub($.get$length(a), 1), compare);
 };
 
 $.DistanceProxy$ = function() {
   var t1 = new $.DistanceProxy($.ListImplementation_List(8), 0, 0);
   t1.DistanceProxy$0();
   return t1;
-};
-
-$.DualPivotQuicksort_sort = function(a, compare) {
-  $.DualPivotQuicksort__doSort(a, 0, $.sub($.get$length(a), 1), compare);
 };
 
 $._JsVisitedMap$ = function() {
@@ -38296,9 +38295,6 @@ $.$defineNativeClass('CanvasRenderingContext2D', ["fillStyle!"], {
 },
  drawImage$9: function(canvas_OR_image_OR_video, sx_OR_x, sy_OR_y, sw_OR_width, height_OR_sh, dx, dy, dw, dh) {
   return this.drawImage(canvas_OR_image_OR_video,sx_OR_x,sy_OR_y,sw_OR_width,height_OR_sh,dx,dy,dw,dh);
-},
- drawImage$3: function(canvas_OR_image_OR_video,sx_OR_x,sy_OR_y) {
-  return this.drawImage(canvas_OR_image_OR_video,sx_OR_x,sy_OR_y);
 },
  drawImage$5: function(canvas_OR_image_OR_video,sx_OR_x,sy_OR_y,sw_OR_width,height_OR_sh) {
   return this.drawImage(canvas_OR_image_OR_video,sx_OR_x,sy_OR_y,sw_OR_width,height_OR_sh);
