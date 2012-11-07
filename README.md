@@ -15,9 +15,13 @@ Google DevFest West 2012 Game Made with Dart
 >>>>>>> e2e10ae3cbff6dad57b7c4633879aaf5b65fa21a
 
 
-v0.001 O
-riginal from Devfest West Hackathon
+v0.001
+Original from Devfest West Hackathon
 
 v0.002 
 Turned off scrolling of the browser and added Gangnam Style Instrumental music. 
 Put it on devfestwestdemo.appspot.com.
+
+v0.003
+Was able to add jumping sounds.
+Added a picture that moves with the player block but moves oppposite direction when jumping. Have not been able to make the block invisible.
